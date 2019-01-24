@@ -1,22 +1,34 @@
-require 'game'
+require './game'
 
 
-def Application
+class Application
 
-	def perform
+	def game_start
     
 		puts "Bienvenue dans ce jeu du Morpion"
-		puts "Appuie sur 1 pour lancer une partie"
-		puts "Appuie sur 2 pour quitter"
-		answer = gets.chomp.to_i
+		while true 
 
-		if answer 
+			#on affiche le menu
+			puts "Appuie sur 1 pour lancer une partie"
+			puts "Appuie sur 2 pour quitter"
+			answer = gets.chomp.to_i
 
+			case answer #en fonction du choix
+			when 1
+				Game.new.perform
+			when 2
+				puts "Au revoir"
+				break #ce "break" permet de sortir de la boucle while
+			else
+        puts "Ce choix n'existe pas, merci de ressayer" 
+			end
+		end
+	end
 
-
-    # TO DO : méthode qui initialise le jeu puis contient des boucles while pour faire tourner le jeu tant que la partie n'est pas terminée.
-    
-
+	def perform
+		game_start
 	end
 
 end	
+
+Application.new.perform

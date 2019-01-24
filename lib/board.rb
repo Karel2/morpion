@@ -6,10 +6,25 @@ class Board
 
 	def initialize
 		@boardcase_array = []
-		9.times{@boardcase_array << BoardCase.new}
+		9.times{@boardcase_array << BoardCase.new("")}
 	end
 
 	def play_turn
+		A1 = 0
+		A2 = 1
+		A3 = 2
+		B1 = 3
+		B2 = 4
+		B3 = 5
+		C1 = 6
+		C2 = 7
+		C3 = 8
+
+
+
+
+
+
 		puts "En quelle case veux tu jouer ?"
 		answer = gets.chomp
 		#cherche dans l'array la case correspondant à la reponse user
@@ -48,6 +63,5 @@ class Board
 
 end	
 
-jeu = Board.new.perform
 
-puts jeu.inspect
+
