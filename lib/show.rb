@@ -6,11 +6,11 @@ class Show
 	def show_board(board)
     
 		
-		puts "     #{board.play_turn}    |          |      "
+		puts "          |          |      "
 	
 		puts "          |          |      "
 
-		puts "          |          |      "
+		puts "     #{board.boardcase_array[0].value}    |     #{board.boardcase_array[0].value}    |    #{board.boardcase_array[0].value} "
 	
 		puts "          |          |      "
 
@@ -21,7 +21,7 @@ class Show
 		
 		puts "          |          |      "
 
-		puts "          |          |      "
+		puts "     #{board.boardcase_array[0].value}     |      #{board.boardcase_array[0].value}    |      #{board.boardcase_array[0].value}"
 	
 		puts "          |          |      "
 
@@ -32,7 +32,7 @@ class Show
 		
 		puts "          |          |      "
 
-		puts "          |          |      "
+		puts "     #{board.boardcase_array[0].value}     |      #{board.boardcase_array[0].value}    |      #{board.boardcase_array[0].value}"
 	
 		puts "          |          |      "
 

@@ -1,4 +1,5 @@
 require './boardcase'
+require "./game"
 
 class Board
 
@@ -6,40 +7,26 @@ class Board
 
 	def initialize
 		@boardcase_array = []
-		9.times{@boardcase_array << BoardCase.new("")}
+		9.times{@boardcase_array << BoardCase.new}
 	end
 
 	def play_turn
-		A1 = 0
-		A2 = 1
-		A3 = 2
-		B1 = 3
-		B2 = 4
-		B3 = 5
-		C1 = 6
-		C2 = 7
-		C3 = 8
-
-
-
-
-
-
+	
 		puts "En quelle case veux tu jouer ?"
-		answer = gets.chomp
-		#cherche dans l'array la case correspondant à la reponse user
-		@boardcase_array.each do |case_user|
-			if answer == case_user #la case = reponse user
-				#check si la case est remplie
-				if case_user == "o" || case_user == "x"
-					puts "choisis une autre case"
-					answer = gets.chomp
-				else #CHANGER AVEC METHODE PLAYER
-					case_user = "xxxxx"
+		answer = gets.chomp.to_i
+		
+			@boardcase_array.each_with_index do |case_user, index|
+				if answer == index #index de la case = reponse user
+
+					if case_user.value == "o" || case_user.value == "x"
+						puts "choisis une autre case"
+						answer = gets.chomp.to_i
+					else #CHANGER AVEC METHODE PLAYER
+						case_user.value = "x" #current_player.symbol
+
+					end
 				end
 			end
-		end
-
 	end
 
 	def victory?
